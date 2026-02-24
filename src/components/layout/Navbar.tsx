@@ -12,19 +12,19 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glassmorphic">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-fib-5 py-fib-4">
-        {/* Logo / Brand Name */}
-        <Link href="/" className="flex items-center gap-2">
+    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-border/40 shadow-sm">
+      <nav className="container mx-auto flex items-center justify-between px-4 h-20 lg:h-24">
+        {/* Logo — Large and prominent for brand recognition */}
+        <Link href="/" className="flex items-center gap-3 flex-shrink-0">
           <Image
             src={brand.logo.icon}
             alt={brand.name}
-            width={36}
-            height={36}
-            className="h-9 w-9 object-contain"
+            width={80}
+            height={80}
+            className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
             priority
           />
-          <span className="font-display text-xl font-bold tracking-tight">{brand.name}</span>
+          <span className="font-display text-lg sm:text-xl lg:text-2xl font-bold tracking-tight">{brand.name}</span>
         </Link>
 
         {/* Desktop Nav */}
