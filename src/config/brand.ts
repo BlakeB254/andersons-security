@@ -26,6 +26,12 @@ export interface BrandConfig {
   contactPhone: string;
   address: { street: string; city: string; state: string; zip: string };
   founded: number;
+  logo: {
+    icon: string;
+    full: string;
+    ogImage: string;
+    favicon: string;
+  };
   intensity: IntensityMode;
   heroVariant: HeroVariant;
   darkMode: "dark-only" | "light-only" | "toggle";
@@ -67,6 +73,12 @@ export const brand: BrandConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   contactEmail: "info@andersonssecurity.com",
   contactPhone: "(123) 456-7890",
+  logo: {
+    icon: "/favicon.svg",
+    full: "/favicon.svg",
+    ogImage: "/website-template-OG.webp",
+    favicon: "/favicon.ico",
+  },
   address: {
     street: "123 Security Blvd, Suite 100",
     city: "Business City",
