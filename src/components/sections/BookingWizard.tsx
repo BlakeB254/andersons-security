@@ -84,7 +84,7 @@ export function BookingWizard() {
                 </div>
                 <span
                   className={cn(
-                    "text-xs mt-fib-2 font-medium",
+                    "text-xs sm:text-sm mt-fib-2 font-medium",
                     isActive ? "text-primary" : "text-muted-foreground"
                   )}
                 >
@@ -128,7 +128,7 @@ export function BookingWizard() {
                       "rounded-fib-4 border-2 p-fib-5 text-left transition-all",
                       isSelected
                         ? "border-primary bg-primary/5 shadow-lg shadow-primary/10"
-                        : "border-border hover:border-primary/30"
+                        : "border-slate-600 hover:border-primary/40"
                     )}
                   >
                     <Icon
@@ -142,7 +142,7 @@ export function BookingWizard() {
                     <p className="text-xs text-muted-foreground mt-fib-1">
                       {service.description}
                     </p>
-                    <p className="mt-fib-3 text-lg font-bold text-primary">
+                    <p className="mt-fib-3 text-lg font-bold text-primary whitespace-nowrap">
                       ${service.rate}<span className="text-xs font-normal text-muted-foreground">/hr</span>
                     </p>
                   </button>
@@ -338,7 +338,7 @@ export function BookingWizard() {
             className={cn(
               "inline-flex items-center gap-fib-2 rounded-fib-3 px-fib-5 py-fib-3 text-sm font-medium transition-colors",
               currentStep === 1
-                ? "text-muted-foreground cursor-not-allowed"
+                ? "text-muted-foreground cursor-not-allowed border border-border/50 bg-muted/30"
                 : "text-foreground border border-border hover:bg-muted"
             )}
           >
@@ -351,8 +351,10 @@ export function BookingWizard() {
               onClick={() => setCurrentStep((s) => Math.min(4, s + 1))}
               disabled={currentStep === 1 && !selectedService}
               className={cn(
-                "btn-cta inline-flex items-center gap-fib-2 rounded-fib-3 px-fib-5 py-fib-3 text-sm font-medium text-white",
-                currentStep === 1 && !selectedService && "opacity-50 cursor-not-allowed"
+                "inline-flex items-center gap-fib-2 rounded-fib-3 px-fib-5 py-fib-3 text-sm font-medium",
+                currentStep === 1 && !selectedService
+                  ? "bg-muted text-muted-foreground cursor-not-allowed"
+                  : "btn-cta text-white"
               )}
             >
               Continue

@@ -55,7 +55,7 @@ export function BookingFAQ() {
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
               className="flex items-center justify-between w-full p-fib-5 text-left"
             >
-              <span className="font-medium text-foreground pr-fib-4">
+              <span className="flex-1 break-words font-medium text-foreground pr-fib-4">
                 {faq.question}
               </span>
               <ChevronDown
